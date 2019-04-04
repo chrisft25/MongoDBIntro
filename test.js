@@ -106,3 +106,11 @@ db.customers.remove({firstName:'Chris'});
 
 //Eliminar solo uno
 db.customers.remove({firstName:'Chris3'},{justOne:true});
+
+//OR
+db.customers.find({$or: [{firstName:'Chris3'}, {firstName:'Chris2'}]});
+
+//Buscar por propiedad y retornar el número de datos
+db.customers.find({
+    gender:"male"
+}).count();
